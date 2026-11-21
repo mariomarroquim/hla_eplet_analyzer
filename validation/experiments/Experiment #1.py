@@ -10,15 +10,17 @@
 
 print()
 
-import warnings; warnings.simplefilter('ignore')
+import warnings
 
-import pandas                  as pd
-import numpy                   as np
+warnings.simplefilter('ignore')
+
+import pandas as pd
+import numpy as np
 import sklearn.model_selection as ms
-import sklearn.metrics         as mt
+import sklearn.metrics as mt
 
-from imblearn.under_sampling   import RandomUnderSampler
-from sklearn.ensemble          import RandomForestClassifier
+from imblearn.under_sampling import RandomUnderSampler
+from sklearn.ensemble import RandomForestClassifier
 
 print('All fine!')
 
@@ -102,11 +104,13 @@ imb_train_labels_pe = np.array(cln_instances_pe['reactive'])
 imb_instances_pe = cln_instances_pe.drop(columns=['reactive'])
 
 rus = RandomUnderSampler()
-train_instances_pe, train_labels_pe = rus.fit_sample(imb_instances_pe, imb_train_labels_pe)
+train_instances_pe, train_labels_pe = rus.fit_sample(
+  imb_instances_pe, imb_train_labels_pe
+)
 
 # Comment the two lines above and uncomment the one below to
 # see the results without any balancing on the training data...
-#train_instances_pe, train_labels_pe = imb_instances_pe, imb_train_labels_pe
+# train_instances_pe, train_labels_pe = imb_instances_pe, imb_train_labels_pe
 
 print('Train instances (PE):', train_instances_pe.shape)
 print('Train labels (PE):', train_labels_pe.shape)
@@ -129,9 +133,11 @@ clf = RandomForestClassifier(n_estimators=100)
 
 clf.fit(train_instances_pe, train_labels_pe)
 
-feature_importances = pd.DataFrame(clf.feature_importances_,
-                                   index = cln_instances_pe.drop(columns=['reactive']).columns,
-                                   columns = ['importance']).sort_values('importance', ascending=False)
+feature_importances = pd.DataFrame(
+  clf.feature_importances_,
+  index=cln_instances_pe.drop(columns=['reactive']).columns,
+  columns=['importance'],
+).sort_values('importance', ascending=False)
 
 print()
 print('Variable importance:\n\n', feature_importances)
@@ -139,16 +145,21 @@ print('Variable importance:\n\n', feature_importances)
 predicted_labels_sp = clf.predict(validation_instances_sp)
 
 print()
-print('- Confusion matrix (TN FP FN TP):', mt.confusion_matrix(validation_labels_sp, predicted_labels_sp).ravel())
+print(
+  '- Confusion matrix (TN FP FN TP):',
+  mt.confusion_matrix(validation_labels_sp, predicted_labels_sp).ravel(),
+)
 
 print()
 print('Validation metrics:\n')
-print(' - AUC-ROC:  %0.2f' % (mt.roc_auc_score(validation_labels_sp, predicted_labels_sp) * 100))
-print(' - Accuracy: %0.2f' % (mt.accuracy_score(validation_labels_sp, predicted_labels_sp) * 100))
+print(
+  ' - AUC-ROC:  %0.2f'
+  % (mt.roc_auc_score(validation_labels_sp, predicted_labels_sp) * 100)
+)
+print(
+  ' - Accuracy: %0.2f'
+  % (mt.accuracy_score(validation_labels_sp, predicted_labels_sp) * 100)
+)
 
 
 # In[ ]:
-
-
-
-

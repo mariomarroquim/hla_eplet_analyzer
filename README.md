@@ -9,6 +9,7 @@ This is a standard Python application. Run `sh run_development.sh`, then open [h
 * Production: `sh run_production.sh` (serves on port 80 via Waitress).
 * Tests: `sh test.sh`.
 * Model regeneration: `sh generate_model.sh` (trains from `validation/datasets/pe-dataset.csv` and overwrites `model.joblib`).
+* Formatting: `python3 -m ruff format .` (settings in `ruff.toml`).
 
 ### API
 

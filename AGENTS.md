@@ -15,8 +15,9 @@ Each script installs `requirements.txt` first.
 - Tests: `sh test.sh` (equivalent to `python3 -m unittest test.py`)
 - Single test: `python3 -m unittest test.SmokeTests.test_successful_prediction`
 - Regenerate model: `sh generate_model.sh` (trains from `validation/datasets/pe-dataset.csv`, overwrites `model.joblib`)
+- Format: `python3 -m ruff format .` (config in `ruff.toml`; check only: `python3 -m ruff format --check .`)
 
-There is no linter or build step.
+There is no build step.
 
 ### Architecture
 
@@ -31,11 +32,12 @@ There is no linter or build step.
 
 - `test.py` asserts exact probability values from the committed `model.joblib`. Regenerating the model will break `test_successful_prediction`; update the expected values when the model is intentionally replaced.
 - The `/version` string is duplicated in `app.py` and `test.py`; update both together.
-- Python code uses 2-space indentation.
+- Python code uses 2-space indentation and single quotes, enforced by `ruff.toml`.
 
 ## Conventions
 
 - Don't add any new dependencies without asking first.
 - If the code changes, sync both `AGENTS.md` and `README.md` as well.
+- Run `ruff format .` to check for errors before every commit.
 - Don't commit and push changes unless explicitly required.
 - This project only uses the `main` branch; commit and push directly to it.
