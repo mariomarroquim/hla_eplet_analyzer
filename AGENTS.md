@@ -38,6 +38,6 @@ There is no build step.
 
 - Don't add any new dependencies without asking first.
 - If the code changes, sync both `AGENTS.md` and `README.md` as well.
-- Run `ruff format .` to check for errors before every commit.
+- Run `python3 -m compileall .` to check for errors before every commit.
 - Don't commit and push changes unless explicitly required.
 - This project only uses the `main` branch; commit and push directly to it.
