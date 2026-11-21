@@ -1,34 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>HLA Eplet Analyzer</title>
-  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}"/>
-
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>HLA Eplet Analyzer</title>
+
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="mobile-web-app-capable" content="yes"/>
-
-  <meta name="description" content="Predict anti-HLA antibody targets at the eplet level using machine learning."/>
-  <meta name="keywords" content="Immunology, Transplant, HLA, CPRA, DSA, Luminex, SAB, Panel, MFI, Cutoff, Calculator, Software, LIMS"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="HLA Eplet Analyzer"/>
+  <meta name="application-name" content="HLA Eplet Analyzer"/>
   <meta name="author" content="HLA Eplet Analyzer"/>
-  <meta name="robots" content="index, follow"/>
-
-  <link rel="canonical" href="/"/>
-
-  <meta property="og:title" content="HLA Eplet Analyzer"/>
-  <meta property="og:description" content="Predict anti-HLA antibody targets at the eplet level using machine learning."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="/"/>
-
+  <meta name="color-scheme" content="only light"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="theme-color" content="#43AAB4"/>
-  <meta name="language" content="English"/>
-  <meta name="distribution" content="global"/>
-  <meta name="rating" content="general"/>
+  <meta name="version" content="2026-05-09"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 
   <link rel="stylesheet" href="{{url_for('static', filename='css/pure_min.css')}}"/>
   <link rel="stylesheet" href="{{url_for('static', filename='css/pure_responsive_min.css')}}"/>
   <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}"/>
+
+  <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/favicon.ico')}}" sizes="any"/>
+  <link rel="apple-touch-icon" href="{{url_for('static', filename='img/favicon.ico')}}" sizes="any"/>
 </head>
 
 <body>
@@ -120,7 +113,7 @@
         <p>
           Note: antibody-reactive HLA eplets are those against which the recipient may have important anti-HLA antibodies.
           If the donor shares one of these eplets, the risk of the recipient developing antibody-mediated rejection against the graft will be greater.
-          Remember that all results presented here are based on probabilities. <span class="strong">This tool is for research use only!</span>
+          Remember that all results presented here are based on probabilities. <span class="strong">For research use only. Not for use in diagnostic procedures.</span>
         </p>
       </div>
     </div>
@@ -164,7 +157,7 @@
 
   <div class="footer">
     <p>
-      &copy; 2026 HLA Eplet Analyzer. All rights reserved. For research use only.
+      &copy; 2026 HLA Eplet Analyzer. All rights reserved. For research use only. Not for use in diagnostic procedures.
 
       <br/>
 

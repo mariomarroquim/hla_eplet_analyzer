@@ -13344,7 +13344,7 @@ SP cleaned dataset: (67683, 10)
 
 <span class="n">eplets_pe_count</span> <span class="o">=</span> <span class="n">cln_instances_pe</span><span class="o">.</span><span class="n">reactive</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Non reactive:&#39;</span><span class="p">,</span> <span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Non-reactive:&#39;</span><span class="p">,</span> <span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reactive:    &#39;</span><span class="p">,</span> <span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Proportion:  &#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">eplets_pe_count</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="s1">&#39;: 1&#39;</span><span class="p">)</span>
 </pre></div>
@@ -13364,7 +13364,7 @@ SP cleaned dataset: (67683, 10)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Non reactive: 77981
+Non-reactive: 77981
 Reactive:     3418
 Proportion:   22 : 1
 </pre>
@@ -13495,7 +13495,7 @@ Proportion:   22 : 1
 
 <span class="n">eplets_sp_count</span> <span class="o">=</span> <span class="n">cln_instances_sp</span><span class="o">.</span><span class="n">reactive</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Non reactive:&#39;</span><span class="p">,</span> <span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Non-reactive:&#39;</span><span class="p">,</span> <span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reactive:    &#39;</span><span class="p">,</span> <span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Proportion:  &#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">eplets_sp_count</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="s1">&#39;: 1&#39;</span><span class="p">)</span>
 </pre></div>
@@ -13515,7 +13515,7 @@ Proportion:   22 : 1
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Non reactive: 65870
+Non-reactive: 65870
 Reactive:     1813
 Proportion:   36 : 1
 </pre>
@@ -13550,16 +13550,16 @@ Proportion:   36 : 1
 <span class="c1"># see the results without any balancing on the training data...</span>
 <span class="c1">#train_instances_pe, train_labels_pe = imb_instances_pe, imb_train_labels_pe</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train labels (PE)&#39;</span><span class="p">,</span> <span class="n">train_instances_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train instances (PE):&#39;</span><span class="p">,</span> <span class="n">train_labels_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train instances (PE):&#39;</span><span class="p">,</span> <span class="n">train_instances_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Train labels (PE):&#39;</span><span class="p">,</span> <span class="n">train_labels_pe</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="n">validation_labels_sp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cln_instances_sp</span><span class="p">[</span><span class="s1">&#39;reactive&#39;</span><span class="p">])</span>
 <span class="n">validation_instances_sp</span> <span class="o">=</span> <span class="n">cln_instances_sp</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;reactive&#39;</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation labels (SP)&#39;</span><span class="p">,</span> <span class="n">validation_instances_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation instances (SP):&#39;</span><span class="p">,</span> <span class="n">validation_labels_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation instances (SP):&#39;</span><span class="p">,</span> <span class="n">validation_instances_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Validation labels (SP):&#39;</span><span class="p">,</span> <span class="n">validation_labels_sp</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13577,11 +13577,11 @@ Proportion:   36 : 1
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Train labels (PE) (6836, 9)
-Train instances (PE): (6836,)
+Train instances (PE): (6836, 9)
+Train labels (PE): (6836,)
 
-Validation labels (SP) (67683, 9)
-Validation instances (SP): (67683,)
+Validation instances (SP): (67683, 9)
+Validation labels (SP): (67683,)
 </pre>
 </div>
 </div>

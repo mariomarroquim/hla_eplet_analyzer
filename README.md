@@ -12,11 +12,11 @@ This is a standard Python application. Run `sh run_development.sh`, then open [h
 
 ### API
 
-`GET` or `POST` to `/predict` with the params `eplet_locus` (`abc`, `drb`, `dq` or `dp`), `eplet_allele_count`, `eplet_min_mfi`, `eplet_max_mfi`, `panel_nc` and `panel_pc`. The response is a JSON with `label` (`1` means antibody-reactive) and the probabilities `score0` and `score1`. Invalid or missing params return HTTP 500.
+`GET` or `POST` to `/predict` with the params `eplet_locus` (`abc`, `drb`, `dq` or `dp`), `eplet_allele_count`, `eplet_min_mfi`, `eplet_max_mfi`, `panel_nc` and `panel_pc`. The response is a JSON object with `label` (`1` means antibody-reactive) and the probabilities `score0` and `score1`. Invalid or missing params return HTTP 500.
 
 ## Validation
 
-The datasets comprise mismatched eplets from HLA alleles tested on single-antigen bead panels. The experiments evaluate the classification of each eplet–panel pair into low- and high-reactivity categories. All validation files are at the [validation](https://github.com/mariomarroquim/hla_eplet_analyzer/tree/main/validation) folder.
+The datasets comprise mismatched eplets from HLA alleles tested on single-antigen bead panels. The experiments evaluate the classification of each eplet–panel pair into low- and high-reactivity categories. All validation files are in the [validation](https://github.com/mariomarroquim/hla_eplet_analyzer/tree/main/validation) folder.
 
 * Basic validation: 89% accuracy and 88% AUC-ROC.
 * Regular cross-validation: 88% accuracy and 92% AUC-ROC.

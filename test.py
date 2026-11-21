@@ -22,7 +22,7 @@ class SmokeTests(unittest.TestCase):
       'eplet_min_mfi': 1000,
       'eplet_max_mfi': 5000,
       'panel_nc': 10,
-      'panel_pc': 20000,
+      'panel_pc': 20000
     }
     response = self.client.get('/predict', query_string=params)
     response_body = json.loads(response.get_data(as_text=True))
@@ -39,7 +39,7 @@ class SmokeTests(unittest.TestCase):
       'eplet_locus': 'abc',
       'eplet_allele_count': 10,
       'eplet_min_mfi': 1000,
-      'eplet_max_mfi': 5000,
+      'eplet_max_mfi': 5000
     }
     response = self.client.get('/predict', query_string=params)
     response_body = response.get_data(as_text=True)

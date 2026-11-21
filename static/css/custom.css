@@ -18,7 +18,19 @@ ul {
 
 .header {
   padding: 14px 24px 18px 24px;
+  padding-top: calc(14px + env(safe-area-inset-top));
   background-color: #43AAB4;
+}
+
+/* Keep content clear of the notch in landscape (viewport-fit=cover). */
+.header, .content, .footer {
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+}
+
+.instructions, .api_access {
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(20px, env(safe-area-inset-right));
 }
 
 .header, .header a, .header a:visited {

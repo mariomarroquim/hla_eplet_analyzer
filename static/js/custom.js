@@ -15,7 +15,7 @@ $(document).ready(function(){
   $("#form").submit(function(event){
     event.preventDefault();
 
-    $("#continue").attr("disabled", true).html("Please, wait...");
+    $("#continue").attr("disabled", true).html("Please wait...");
 
     var url = $(this).attr("action");
     var data = $("#form").serialize();
@@ -35,7 +35,7 @@ $(document).ready(function(){
 
       $("#result").show();
     }).fail(function(){
-      alert("EpLogic could not continue.\n\nPlease, check if all fields are filled.");
+      alert("HLA Eplet Analyzer could not continue.\n\nPlease check if all fields are filled.");
 
     }).always(function(){
       $("#continue").attr("disabled", false).removeAttr("disabled").html("Continue");

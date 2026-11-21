@@ -66,7 +66,7 @@ print()
 
 eplets_pe_count = cln_instances_pe.reactive.value_counts()
 
-print('Non reactive:', eplets_pe_count[0])
+print('Non-reactive:', eplets_pe_count[0])
 print('Reactive:    ', eplets_pe_count[1])
 print('Proportion:  ', int(eplets_pe_count[0] / eplets_pe_count[1]), ': 1')
 
@@ -86,7 +86,7 @@ print()
 
 eplets_sp_count = cln_instances_sp.reactive.value_counts()
 
-print('Non reactive:', eplets_sp_count[0])
+print('Non-reactive:', eplets_sp_count[0])
 print('Reactive:    ', eplets_sp_count[1])
 print('Proportion:  ', int(eplets_sp_count[0] / eplets_sp_count[1]), ': 1')
 
@@ -105,8 +105,8 @@ rus = RandomUnderSampler()
 
 train_instances_pe, train_labels_pe = rus.fit_sample(imb_instances_pe, imb_train_labels_pe)
 
-print('Train labels (PE)', train_instances_pe.shape)
-print('Train instances (PE):', train_labels_pe.shape)
+print('Train instances (PE):', train_instances_pe.shape)
+print('Train labels (PE):', train_labels_pe.shape)
 
 print()
 
@@ -115,8 +115,8 @@ imb_instances_sp = cln_instances_sp.drop(columns=['reactive'])
 
 train_instances_sp, train_labels_sp = rus.fit_sample(imb_instances_sp, imb_train_labels_sp)
 
-print('Train labels (SP)', train_instances_sp.shape)
-print('Train instances (SP):', train_labels_sp.shape)
+print('Train instances (SP):', train_instances_sp.shape)
+print('Train labels (SP):', train_labels_sp.shape)
 
 
 # ## Training the model and validating it

@@ -50,7 +50,7 @@ def predict():
     return jsonify(
       label=str(results[0]),
       score0=str(probabilities[0][0]),
-      score1=str(probabilities[0][1]),
+      score1=str(probabilities[0][1])
     )
   except:
     return 'Check if all params (eplet_locus, eplet_allele_count, eplet_min_mfi, eplet_max_mfi, panel_nc, panel_pc) contain valid values.', 500

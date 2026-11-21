@@ -66,7 +66,7 @@ print()
 
 eplets_pe_count = cln_instances_pe.reactive.value_counts()
 
-print('Non reactive:', eplets_pe_count[0])
+print('Non-reactive:', eplets_pe_count[0])
 print('Reactive:    ', eplets_pe_count[1])
 print('Proportion:  ', int(eplets_pe_count[0] / eplets_pe_count[1]), ': 1')
 
@@ -86,7 +86,7 @@ print()
 
 eplets_sp_count = cln_instances_sp.reactive.value_counts()
 
-print('Non reactive:', eplets_sp_count[0])
+print('Non-reactive:', eplets_sp_count[0])
 print('Reactive:    ', eplets_sp_count[1])
 print('Proportion:  ', int(eplets_sp_count[0] / eplets_sp_count[1]), ': 1')
 
@@ -108,16 +108,16 @@ train_instances_pe, train_labels_pe = rus.fit_sample(imb_instances_pe, imb_train
 # see the results without any balancing on the training data...
 #train_instances_pe, train_labels_pe = imb_instances_pe, imb_train_labels_pe
 
-print('Train labels (PE)', train_instances_pe.shape)
-print('Train instances (PE):', train_labels_pe.shape)
+print('Train instances (PE):', train_instances_pe.shape)
+print('Train labels (PE):', train_labels_pe.shape)
 
 print()
 
 validation_labels_sp = np.array(cln_instances_sp['reactive'])
 validation_instances_sp = cln_instances_sp.drop(columns=['reactive'])
 
-print('Validation labels (SP)', validation_instances_sp.shape)
-print('Validation instances (SP):', validation_labels_sp.shape)
+print('Validation instances (SP):', validation_instances_sp.shape)
+print('Validation labels (SP):', validation_labels_sp.shape)
 
 
 # ## Training the model and validating it
