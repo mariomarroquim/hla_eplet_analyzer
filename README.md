@@ -26,4 +26,4 @@ The datasets comprise mismatched eplets from HLA alleles tested on single-antige
 
 ## Support
 
-You can contact me at mariomarroquim@gmail.com.
+You can contact me at [mariomarroquim@gmail.com](mailto:mariomarroquim@gmail.com).
